@@ -1,0 +1,10 @@
+\contentsline {section}{\numberline {1}Festlegen der Ziele}{2}{}%
+\contentsline {subsection}{\numberline {1.1}1. Ziel}{2}{}%
+\contentsline {subsection}{\numberline {1.2}2. Ziel}{2}{}%
+\contentsline {section}{\numberline {2}Dashboard Prototyp}{3}{}%
+\contentsline {subsection}{\numberline {2.1}Überschrift}{3}{}%
+\contentsline {subsection}{\numberline {2.2}ECTS Counter}{3}{}%
+\contentsline {subsection}{\numberline {2.3}ECTS pro Monat}{3}{}%
+\contentsline {subsection}{\numberline {2.4}Zeit zu ECTS}{3}{}%
+\contentsline {section}{\numberline {3}UML-Klassendiagramm}{4}{}%
+\contentsline {section}{\numberline {4}Machbarkeitsüberprüfung und Erprobung von Umsetzungsmöglichkeiten mit Python}{5}{}%
