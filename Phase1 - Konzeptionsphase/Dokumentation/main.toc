@@ -8,3 +8,7 @@
 \contentsline {subsection}{\numberline {2.4}Zeit zu ECTS}{3}{}%
 \contentsline {section}{\numberline {3}UML-Klassendiagramm}{4}{}%
 \contentsline {section}{\numberline {4}Machbarkeitsüberprüfung und Erprobung von Umsetzungsmöglichkeiten mit Python}{5}{}%
+\contentsline {subsection}{\numberline {4.1}Entwicklungsumgebung und Bibliotheken}{5}{}%
+\contentsline {subsection}{\numberline {4.2}Datenspeicherung}{5}{}%
+\contentsline {subsection}{\numberline {4.3}Quellcodeverwaltung}{5}{}%
+\contentsline {subsection}{\numberline {4.4}Interaktion mit dem User}{5}{}%
