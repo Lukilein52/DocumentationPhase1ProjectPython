@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.2.18)  5 APR 2026 02:11
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.2.18)  6 APR 2026 21:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -52,8 +52,7 @@ File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count196
 \l__pdf_internal_box=\box51
 )
-(./main.aux (./chapters/ziele.aux) (./chapters/dashboard.aux)
-(./chapters/uml.aux) (./chapters/machbarkeit.aux))
+(./main.aux)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 10.
@@ -70,8 +69,7 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 10.
 LaTeX Font Info:    ... okay on input line 10.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 10.
 LaTeX Font Info:    ... okay on input line 10.
-
-(c:/texlive/2023/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+ (c:/texlive/2023/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count197
 \scratchdimen=\dimen143
@@ -115,87 +113,73 @@ zungsm^^?oglichkeiten
 \tf@toc=\write3
 \openout3 = `main.toc'.
 
- [1
-
-{c:/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-\openout2 = `chapters/ziele.aux'.
-
-
-(./chapters/ziele.tex
+ (./chapters/ziele.tex
 Underfull \hbox (badness 10000) in paragraph at lines 4--6
 
  []
 
-)
-Underfull \hbox (badness 10000) in paragraph at lines 9--14
+) (./chapters/dashboard.tex
+Underfull \hbox (badness 10000) in paragraph at lines 9--1
 
  []
 
-[2
-
-]
-\openout2 = `chapters/dashboard.aux'.
-
- (./chapters/dashboard.tex
-<images/dashboard.png, id=14, 1084.05pt x 384.6872pt>
+<images/dashboard.png, id=1, 1084.05pt x 384.6872pt>
 File: images/dashboard.png Graphic file (type png)
 <use images/dashboard.png>
 Package pdftex.def Info: images/dashboard.png  used on input line 5.
 (pdftex.def)             Requested size: 345.0pt x 122.42738pt.
-)
-Overfull \hbox (4.00053pt too wide) in paragraph at lines 24--15
+[1
+
+{c:/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}])
+(./chapters/uml.tex
+Overfull \hbox (4.00053pt too wide) in paragraph at lines 24--1
 \OT1/cmr/m/n/10 Das Ziel das Studium in min-destens 3 Jahren abzuschlie^^Yen er
 -fordert eine Anzeige
  []
 
-[3
-
-
-
- <./images/dashboard.png>]
-\openout2 = `chapters/uml.aux'.
-
- (./chapters/uml.tex) [4
-
-
-
-]
-\openout2 = `chapters/machbarkeit.aux'.
-
-
-(./chapters/machbarkeit.tex
+) (./chapters/machbarkeit.tex
 Overfull \hbox (1.20625pt too wide) in paragraph at lines 1--1
 []\OT1/cmr/bx/n/14.4 Machbarkeits^^?uberpr^^?ufung und Er-probung von
  []
 
-) [5
 
+Underfull \hbox (badness 10000) in paragraph at lines 4--6
 
+ []
 
-] (./main.aux (./chapters/ziele.aux) (./chapters/dashboard.aux)
-(./chapters/uml.aux) (./chapters/machbarkeit.aux))
+[2 <./images/dashboard.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 15--17
+
+ []
+
+)
+Underfull \hbox (badness 10000) in paragraph at lines 20--18
+
+ []
+
+[3] (./main.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-13>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 1419 strings out of 474141
- 24407 string characters out of 5748625
- 1930998 words of memory out of 5000000
- 23759 multiletter control sequences out of 15000+600000
+ 1343 strings out of 474141
+ 21891 string characters out of 5748625
+ 1932998 words of memory out of 5000000
+ 23699 multiletter control sequences out of 15000+600000
  562324 words of font info for 50 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 57i,6n,65p,371b,231s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 57i,6n,65p,369b,231s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/tex
 live/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2023
 /texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2023/texmf-dis
 t/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2023/texmf-dist/fonts/ty
 pe1/public/amsfonts/cm/cmr17.pfb>
-Output written on main.pdf (5 pages, 173848 bytes).
+Output written on main.pdf (3 pages, 175875 bytes).
 PDF statistics:
- 48 PDF objects out of 1000 (max. 8388607)
- 28 compressed objects within 1 object stream
+ 42 PDF objects out of 1000 (max. 8388607)
+ 24 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 

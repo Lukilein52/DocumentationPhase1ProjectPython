@@ -1,14 +1,14 @@
-\contentsline {section}{\numberline {1}Festlegen der Ziele}{2}{}%
-\contentsline {subsection}{\numberline {1.1}1. Ziel}{2}{}%
-\contentsline {subsection}{\numberline {1.2}2. Ziel}{2}{}%
-\contentsline {section}{\numberline {2}Dashboard Prototyp}{3}{}%
-\contentsline {subsection}{\numberline {2.1}Überschrift}{3}{}%
-\contentsline {subsection}{\numberline {2.2}ECTS Counter}{3}{}%
-\contentsline {subsection}{\numberline {2.3}ECTS pro Monat}{3}{}%
-\contentsline {subsection}{\numberline {2.4}Zeit zu ECTS}{3}{}%
-\contentsline {section}{\numberline {3}UML-Klassendiagramm}{4}{}%
-\contentsline {section}{\numberline {4}Machbarkeitsüberprüfung und Erprobung von Umsetzungsmöglichkeiten mit Python}{5}{}%
-\contentsline {subsection}{\numberline {4.1}Entwicklungsumgebung und Bibliotheken}{5}{}%
-\contentsline {subsection}{\numberline {4.2}Datenspeicherung}{5}{}%
-\contentsline {subsection}{\numberline {4.3}Quellcodeverwaltung}{5}{}%
-\contentsline {subsection}{\numberline {4.4}Interaktion mit dem User}{5}{}%
+\contentsline {section}{\numberline {1}Festlegen der Ziele}{1}{}%
+\contentsline {subsection}{\numberline {1.1}1. Ziel}{1}{}%
+\contentsline {subsection}{\numberline {1.2}2. Ziel}{1}{}%
+\contentsline {section}{\numberline {2}Dashboard Prototyp}{2}{}%
+\contentsline {subsection}{\numberline {2.1}Überschrift}{2}{}%
+\contentsline {subsection}{\numberline {2.2}ECTS Counter}{2}{}%
+\contentsline {subsection}{\numberline {2.3}ECTS pro Monat}{2}{}%
+\contentsline {subsection}{\numberline {2.4}Zeit zu ECTS}{2}{}%
+\contentsline {section}{\numberline {3}UML-Klassendiagramm}{3}{}%
+\contentsline {section}{\numberline {4}Machbarkeitsüberprüfung und Erprobung von Umsetzungsmöglichkeiten mit Python}{3}{}%
+\contentsline {subsection}{\numberline {4.1}Entwicklungsumgebung und Bibliotheken}{3}{}%
+\contentsline {subsection}{\numberline {4.2}Datenspeicherung}{3}{}%
+\contentsline {subsection}{\numberline {4.3}Quellcodeverwaltung}{3}{}%
+\contentsline {subsection}{\numberline {4.4}Interaktion mit dem User}{3}{}%
