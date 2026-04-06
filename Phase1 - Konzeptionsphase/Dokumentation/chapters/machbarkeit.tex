@@ -2,7 +2,14 @@
 \subsection{Entwicklungsumgebung und Bibliotheken}
 
 \textbf{Welche Python Entwicklungsumgebung und welche Python Bibliotheken sollen warum zum Einsatz kommen?}
-\newline
+\subsubsection{Entwicklungsumgebung}
+Als Entwicklungsumgebung bietet sich PyCharm an, da dieses ein guter Allrounder im Bereich Python ist, integriertes Debugging anbietet, Unterstützung für Git besteht, Code Vervollständigung beinhaltet und kostenlos zur Verfügung steht.
+\subsubsection{Bibliotheken}
+\paragraph{Bibliothek für das GUI}
+Als Bibliothek für die grafische Benutzeroberfläche bieten sich zwei verschiedene Bibliotheken an. Zum eine würde PyQt6 in Frage kommen, zum anderen Tkinter. PyQt6 hat zwar viele Funktionen, es werden die meisten davon jedoch nicht benötigt. Außerdem ist PyQt6 so umfangreich, dass es eine deutlich größere Lernkurve als Tkinter hat. Weiters ist der Dateiumfang deutlich größer, Tkinter ist deutlich leichtgewichtiger und reicht für kleine Anwendungen wie dieses Dashboard völlig aus. Tkinter erfordert auch keine Installationen im Gegensatz zu PyQt6. Ein kleiner Nachteil an Tkinter ist, dass die Entwicklerbasis nicht so groß ist wie bei PyQt6. Zusammengefasst ist Tkinter die bessere Lösung für dieses Projekt.
+\paragraph{Bibliothek für die Graphen}
+
+Da Tkinter keine Säulen und Ringdiagramme darstellen kann braucht es eine weitere Bibliothek. Dazu bietet sich Matplotlib an. Es ist zwar nicht die schlankeste Bibliothek, aber sie bietet Integration für Tkinter und alle gefragten Diagrammtypen.
 
 \subsection{Datenspeicherung}
 
@@ -14,8 +21,10 @@ Da die Abgabe erfordert, dass das Programm auf einem PC laufen muss, ohne etwa D
 
 \textbf{Wie soll der Quellcode verwaltet werden?}
 \newline
+Da Git eine direkte Anbindung an PyCharm anbietet ist es naheliegend dieses Versionierungssystem zu verwenden. Außerdem ist es das am weitesten verbreitetste Versionierungssystem, was für viel Community Support spricht, da bei den meisten Problem Lösungen in Foren bereitstehen.
 
 \subsection{Interaktion mit dem User}
 
 \textbf{Soll die Interaktion mit dem Benutzer über die Kommandozeile oder über eine grafische Bedienoberfläche erfolgen?}
 \newline
+Im Finalen Produkt soll die Interaktion mit dem User über eine grafische Bedienoberfläche innerhalb der App erfolgen. Das Dashboard soll jedoch nur prototypisch umgesetzt werden. Wenn man sich aber den Nutzen einer fertigen grafischen Oberfläche gegenüber der Kommandozeile ansieht, ist eine Interaktion auch innerhalb des Prototyps über eine grafische Oberfläche von Vorteil, da sowieso das GUI programmiert wird und dadurch alles in einem Fenster ist, was das Testen aus der Sicht eines Benutzers deutlich einfacher macht.
