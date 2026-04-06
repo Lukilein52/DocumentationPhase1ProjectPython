@@ -63,7 +63,7 @@
 											"parentStyle": true,
 											"left": 445,
 											"top": 551,
-											"width": 166.09619140625,
+											"width": 179.1279296875,
 											"height": 13,
 											"text": "Studium"
 										},
@@ -101,7 +101,7 @@
 									"parentStyle": true,
 									"left": 440,
 									"top": 544,
-									"width": 176.09619140625,
+									"width": 189.1279296875,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGdWUmqnrQSAj4="
@@ -139,7 +139,7 @@
 											"parentStyle": true,
 											"left": 445,
 											"top": 574,
-											"width": 166.09619140625,
+											"width": 179.1279296875,
 											"height": 13,
 											"text": "-moegliche_ects: int",
 											"horizontalAlignment": 0
@@ -157,7 +157,7 @@
 											"parentStyle": true,
 											"left": 445,
 											"top": 589,
-											"width": 166.09619140625,
+											"width": 179.1279296875,
 											"height": 13,
 											"text": "-startdatum: date",
 											"horizontalAlignment": 0
@@ -175,7 +175,7 @@
 											"parentStyle": true,
 											"left": 445,
 											"top": 604,
-											"width": 166.09619140625,
+											"width": 179.1279296875,
 											"height": 13,
 											"text": "-enddatum: date",
 											"horizontalAlignment": 0
@@ -185,7 +185,7 @@
 									"parentStyle": true,
 									"left": 440,
 									"top": 569,
-									"width": 176.09619140625,
+									"width": 189.1279296875,
 									"height": 53
 								},
 								{
@@ -211,7 +211,7 @@
 											"parentStyle": true,
 											"left": 445,
 											"top": 627,
-											"width": 166.09619140625,
+											"width": 179.1279296875,
 											"height": 13,
 											"text": "+gesamt_ects(): int",
 											"horizontalAlignment": 0
@@ -229,9 +229,9 @@
 											"parentStyle": true,
 											"left": 445,
 											"top": 642,
-											"width": 166.09619140625,
+											"width": 179.1279296875,
 											"height": 13,
-											"text": "+remaining_time(): timedelta",
+											"text": "+verbleibende_zeit(): timedelta",
 											"horizontalAlignment": 0
 										}
 									],
@@ -239,7 +239,7 @@
 									"parentStyle": true,
 									"left": 440,
 									"top": 622,
-									"width": 176.09619140625,
+									"width": 189.1279296875,
 									"height": 38
 								},
 								{
@@ -282,7 +282,7 @@
 							"containerChangeable": true,
 							"left": 440,
 							"top": 544,
-							"width": 175.09619140625,
+							"width": 188.1279296875,
 							"height": 116,
 							"nameCompartment": {
 								"$ref": "AAAAAAGdWUmqnrQR3YY="
@@ -1012,7 +1012,7 @@
 									},
 									"font": "Arial;13;0",
 									"parentStyle": false,
-									"left": 629,
+									"left": 636,
 									"top": 612,
 									"width": 74.80712890625,
 									"height": 13,
@@ -1036,7 +1036,7 @@
 									"visible": null,
 									"font": "Arial;13;0",
 									"parentStyle": false,
-									"left": 666,
+									"left": 673,
 									"top": 627,
 									"height": 13,
 									"alpha": 1.5707963267948966,
@@ -1058,7 +1058,7 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"parentStyle": false,
-									"left": 667,
+									"left": 674,
 									"top": 582,
 									"height": 13,
 									"alpha": -1.5707963267948966,
@@ -1147,7 +1147,7 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"parentStyle": false,
-									"left": 641,
+									"left": 654,
 									"top": 611,
 									"height": 13,
 									"alpha": -0.5235987755982988,
@@ -1168,7 +1168,7 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"parentStyle": false,
-									"left": 644,
+									"left": 657,
 									"top": 625,
 									"height": 13,
 									"alpha": -0.7853981633974483,
@@ -1188,7 +1188,7 @@
 									},
 									"font": "Arial;13;0",
 									"parentStyle": false,
-									"left": 634,
+									"left": 647,
 									"top": 584,
 									"width": 7.22998046875,
 									"height": 13,
@@ -1239,7 +1239,7 @@
 								"$ref": "AAAAAAGdWUnMTbQ6xV8="
 							},
 							"lineStyle": 1,
-							"points": "719:603;616:603",
+							"points": "719:603;629:603",
 							"showVisibility": true,
 							"nameLabel": {
 								"$ref": "AAAAAAGdWo5JgLYxr74="
@@ -2440,7 +2440,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGdWUmqnbQOhyc="
 							},
-							"name": "remaining_time",
+							"name": "verbleibende_zeit",
 							"parameters": [
 								{
 									"_type": "UMLParameter",
