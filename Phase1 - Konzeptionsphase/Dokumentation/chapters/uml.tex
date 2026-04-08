@@ -1,1 +1,10 @@
 \section{UML-Klassendiagramm}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width = 0.5\textwidth]{uml.png}
+	\caption{UML Diagramm in StarUML}
+	\label{fig:uml}
+\end{figure}
+
+In diesem UML Diagramm sind 4 Klassen zu sehen. Erstens EIN Studium, welches aus MINDESTENS EINEM Semester besteht. Da das Semester nicht ohne einem Studium bestehen kann ist eine Komposition notwendig. Weiters gibt es noch die Klasse Modul, wobei EIN Semester 0..* Module hat. Diese sind mit einer Aggregation verbunden, da ein Modul auch statt in Semester 1 in Semester 3 angeboten werden kann. Die vierte Klasse ist die Prüfungsleistung. EIN Modul hat EINE Prüfungsleistung und diese sind mit einer Komposition verbunden, da die Prüfungsleistung nicht ohne das Modul bestehen kann.
