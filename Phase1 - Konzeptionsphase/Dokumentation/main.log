@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.2.18)  8 APR 2026 22:21
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.2.18)  8 APR 2026 22:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -233,13 +233,13 @@ File: images/dashboard.png Graphic file (type png)
 <use images/dashboard.png>
 Package pdftex.def Info: images/dashboard.png  used on input line 5.
 (pdftex.def)             Requested size: 500.484pt x 177.60393pt.
-) (./chapters/uml.tex
-<images/uml.png, id=13, 413.29407pt x 341.77687pt>
+) (./chapters/uml.tex [2 <./images/dashboard.png>]
+<images/uml.png, id=17, 413.29407pt x 341.77687pt>
 File: images/uml.png Graphic file (type png)
 <use images/uml.png>
 Package pdftex.def Info: images/uml.png  used on input line 5.
 (pdftex.def)             Requested size: 250.24199pt x 206.94513pt.
- [2 <./images/dashboard.png>]) (./chapters/machbarkeit.tex
+) (./chapters/machbarkeit.tex
 Overfull \hbox (32.17706pt too wide) in paragraph at lines 1--1
 []\OT1/cmr/bx/n/14.4 Machbarkeits[]uberpr[]ufung und Er-pro-bung von Um-set-zun
 gsm[]oglichkeiten
@@ -260,7 +260,7 @@ L3 programming layer <2024-02-13>
 Here is how much of TeX's memory you used:
  3522 strings out of 474141
  60261 string characters out of 5748625
- 1931998 words of memory out of 5000000
+ 1932998 words of memory out of 5000000
  25820 multiletter control sequences out of 15000+600000
  562324 words of font info for 50 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -270,7 +270,7 @@ live/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2023
 /texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2023/texmf-dis
 t/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2023/texmf-dist/fonts/ty
 pe1/public/amsfonts/cm/cmr17.pfb>
-Output written on main.pdf (4 pages, 197000 bytes).
+Output written on main.pdf (4 pages, 205903 bytes).
 PDF statistics:
  47 PDF objects out of 1000 (max. 8388607)
  26 compressed objects within 1 object stream

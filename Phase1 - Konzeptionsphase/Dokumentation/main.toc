@@ -7,6 +7,7 @@
 \contentsline {subsection}{\numberline {2.2}ECTS Counter}{2}{}%
 \contentsline {subsection}{\numberline {2.3}ECTS pro Monat}{2}{}%
 \contentsline {subsection}{\numberline {2.4}Zeit zu ECTS}{2}{}%
+\contentsline {subsection}{\numberline {2.5}Hinzufügen Button}{3}{}%
 \contentsline {section}{\numberline {3}UML-Klassendiagramm}{3}{}%
 \contentsline {section}{\numberline {4}Machbarkeitsüberprüfung und Erprobung von Umsetzungsmöglichkeiten mit Python}{3}{}%
 \contentsline {subsection}{\numberline {4.1}Entwicklungsumgebung und Bibliotheken}{3}{}%
