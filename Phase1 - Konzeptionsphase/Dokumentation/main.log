@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.2.18)  8 APR 2026 22:41
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.2.18)  17 APR 2026 21:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -245,13 +245,7 @@ Overfull \hbox (32.17706pt too wide) in paragraph at lines 1--1
 gsm[]oglichkeiten
  []
 
-[3 <./images/uml.png>])
-Overfull \hbox (15.32246pt too wide) in paragraph at lines 28--21
-\OT1/cmr/m/n/10 Die Mach-bar-keit al-ler ober-halb an-gef[]uhrter Punk-te wird 
-durch klei-ne Test-pro-gram-me ge-tes-tet und wird als durchf[]uhrbar
- []
-
-[4] (./main.aux)
+[3 <./images/uml.png>]) [4] (./main.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-13>
@@ -270,7 +264,7 @@ live/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2023
 /texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2023/texmf-dis
 t/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2023/texmf-dist/fonts/ty
 pe1/public/amsfonts/cm/cmr17.pfb>
-Output written on main.pdf (4 pages, 205903 bytes).
+Output written on main.pdf (4 pages, 206011 bytes).
 PDF statistics:
  47 PDF objects out of 1000 (max. 8388607)
  26 compressed objects within 1 object stream
