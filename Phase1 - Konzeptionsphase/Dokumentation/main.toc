@@ -17,5 +17,6 @@
 \contentsline {paragraph}{Bibliothek für das GUI}{4}{section*.2}%
 \contentsline {paragraph}{Bibliothek für die Graphen}{4}{section*.3}%
 \contentsline {subsection}{\numberline {4.2}Datenspeicherung}{4}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}Quellcodeverwaltung}{4}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.3}Quellcodeverwaltung}{5}{subsection.4.3}%
 \contentsline {subsection}{\numberline {4.4}Interaktion mit dem User}{5}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.5}Testprogramme}{5}{subsection.4.5}%
