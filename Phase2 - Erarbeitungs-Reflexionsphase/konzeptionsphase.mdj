@@ -2402,8 +2402,8 @@
 											"visible": false,
 											"font": "Arial;13;0",
 											"parentStyle": true,
-											"left": 80,
-											"top": -224,
+											"left": 640,
+											"top": -320,
 											"height": 13
 										},
 										{
@@ -2414,8 +2414,8 @@
 											},
 											"font": "Arial;13;1",
 											"parentStyle": true,
-											"left": 269,
-											"top": 783,
+											"left": 549,
+											"top": 735,
 											"width": 63.8544921875,
 											"height": 13,
 											"text": "Speichern"
@@ -2429,8 +2429,8 @@
 											"visible": false,
 											"font": "Arial;13;0",
 											"parentStyle": true,
-											"left": 80,
-											"top": -224,
+											"left": 640,
+											"top": -320,
 											"width": 73.67724609375,
 											"height": 13,
 											"text": "(from Model)"
@@ -2444,16 +2444,16 @@
 											"visible": false,
 											"font": "Arial;13;0",
 											"parentStyle": true,
-											"left": 80,
-											"top": -224,
+											"left": 640,
+											"top": -320,
 											"height": 13,
 											"horizontalAlignment": 1
 										}
 									],
 									"font": "Arial;13;0",
 									"parentStyle": true,
-									"left": 264,
-									"top": 776,
+									"left": 544,
+									"top": 728,
 									"width": 73.8544921875,
 									"height": 25,
 									"stereotypeLabel": {
@@ -2480,8 +2480,8 @@
 									},
 									"font": "Arial;13;0",
 									"parentStyle": true,
-									"left": 264,
-									"top": 801,
+									"left": 544,
+									"top": 753,
 									"width": 73.8544921875,
 									"height": 10
 								},
@@ -2496,8 +2496,8 @@
 									},
 									"font": "Arial;13;0",
 									"parentStyle": true,
-									"left": 264,
-									"top": 811,
+									"left": 544,
+									"top": 763,
 									"width": 73.8544921875,
 									"height": 10
 								},
@@ -2513,8 +2513,8 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"parentStyle": true,
-									"left": 40,
-									"top": -112,
+									"left": 320,
+									"top": -160,
 									"width": 10,
 									"height": 10
 								},
@@ -2530,8 +2530,8 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"parentStyle": true,
-									"left": 40,
-									"top": -112,
+									"left": 320,
+									"top": -160,
 									"width": 10,
 									"height": 10
 								}
@@ -2539,8 +2539,8 @@
 							"font": "Arial;13;0",
 							"parentStyle": false,
 							"containerChangeable": true,
-							"left": 264,
-							"top": 776,
+							"left": 544,
+							"top": 728,
 							"width": 72.8544921875,
 							"height": 45,
 							"nameCompartment": {
