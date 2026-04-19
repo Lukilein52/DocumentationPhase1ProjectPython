@@ -14,5 +14,5 @@ class Modul:
     def get_pruefungsleistung(self):
         return self.pruefungsleistung
 
-    def berstanden(self):
-        return all(pruefungsleistung.bestanden() for pl in self.pruefungsleistung)
+    def bestanden(self):
+        return all(pl.bestanden() for pl in self.pruefungsleistung)

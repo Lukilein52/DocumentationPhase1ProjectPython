@@ -23,7 +23,11 @@ class Pruefungsleistung:
 
     # Methoden
     def bestanden(self) -> bool:
-        if self.note < 5 & self.note > 0:
+        if self.note <= 4.0 and self.note >= 1.0:
             return True
         else:
             return False
+
+
+def bestanden():
+    return None
