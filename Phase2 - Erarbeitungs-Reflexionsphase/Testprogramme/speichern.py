@@ -32,29 +32,7 @@ class Speichern:
             except Exception as e:
                 print(f"Ladefehler: {e}")
 
-        # Demo-Daten
-        module_s1 = [
-            Modul("Mathematik I", 8, pruefung=Pruefungsleistung(2), monat="Jan"),
-            Modul("Programmierung", 6, pruefung=Pruefungsleistung(1), monat="Feb"),
-            Modul("BWL Grundlagen", 5, pruefung=Pruefungsleistung(3), monat="Feb"),
-        ]
-        module_s2 = [
-            Modul("Mathematik II", 8, pruefung=Pruefungsleistung(3), monat="Mär"),
-            Modul("Datenbanken", 6, pruefung=Pruefungsleistung(2), monat="Apr"),
-            Modul("Statistik", 5, pruefung=Pruefungsleistung(4), monat="Apr"),
-            Modul("Algorithmen", 6, bestanden=False, monat="Mai"),
-        ]
-        module_s3 = [
-            Modul("Softwareentwicklung", 7, bestanden=False, monat="Mai"),
-            Modul("Netzwerke", 5, bestanden=False, monat="Jun"),
-        ]
-        return Studium("Informatik B.Sc.", 180,
-                       date(2023, 10, 1), date(2026, 9, 30),
-                       [Semester("Semester 1", 180, module_s1),
-                        Semester("Semester 2", 180, module_s2),
-                        Semester("Semester 3", 180, module_s3)])
-
-    def save_data(studium: Studium):
+    def save_data(self, studium: Studium):
         d = {
             "name": studium.name,
             "moegliche_ects": studium.moegliche_ects,

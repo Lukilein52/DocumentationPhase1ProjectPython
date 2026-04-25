@@ -19,7 +19,7 @@ class Dashboard:
         self.studium = studium
         self.root.title("Studium Dashboard")
         self.root.configure(bg=BG)
-        self.root.geometry("1120x680")
+        self.root.geometry("1920x1080")
         self.root.minsize(900, 580)
         self._build_ui()
         self.anzeigen()
@@ -46,6 +46,7 @@ class Dashboard:
         for txt, cmd, color in [
             ("💾 SPEICHERN", self._speichern, BLUE),
             ("＋ HINZUFÜGEN", self._dialog_modul, RED),
+            ("⚙️ STUDIUM BEARBEITEN",self._daten_bearbeiten, GREEN)
         ]:
             tk.Button(hdr, text=txt, command=cmd,
                       bg=CARD, fg=color, relief="flat",
@@ -77,7 +78,7 @@ class Dashboard:
     def anzeigen(self):
         s = self.studium
         self.lbl_title.config(
-            text=f"Hallo Lukas,  Du studierst seit {s.tage_studiert()} Tagen!")
+            text=f"Hallo Lukas, Du studierst {s.name} seit {s.tage_studiert()} Tagen!")
         self.plot_donut()
         self.plot_ects_monat()
         self.plot_fortschritt()
@@ -120,7 +121,7 @@ class Dashboard:
                 fontsize=8,  color=MUTED, fontfamily=FONT, zorder=4)
         ax.set_xlim(-1.1, 1.1)
         ax.set_ylim(-1.1, 1.1)
-        fig.tight_layout(pad=0)
+        fig.subplots_adjust(left=0, right=1, top=1, bottom=0)
 
         c = FigureCanvasTkAgg(fig, master=self.f_donut)
         c.draw()
@@ -338,9 +339,81 @@ class Dashboard:
                   bg=RED, fg=WHITE, font=(FONT, 10, "bold"),
                   relief="flat", pady=8).pack(fill="x", padx=16, pady=16)
 
+
+    # ── Daten bearbeiten ───────────────────────────
+
+    def _daten_bearbeiten(self):
+        if not self.studium.semester:
+            messagebox.showwarning("Warnung", "Kein Semester vorhanden.")
+            return
+
+        dlg = tk.Toplevel(self.root)
+        dlg.title("Studium bearbeiten")
+        dlg.configure(bg=BG)
+        dlg.resizable(False, False)
+        dlg.grab_set()
+
+        def row(label, widget_fn):
+            tk.Label(dlg, text=label, fg=MUTED, bg=BG,
+                     font=(FONT, 8), anchor="w").pack(fill="x", padx=16, pady=(8, 0))
+            w = widget_fn()
+            w.pack(fill="x", padx=16)
+            return w
+
+        def mk_entry():
+            return tk.Entry(dlg, bg=CARD, fg=WHITE, insertbackground=WHITE,
+                            font=(FONT, 10), relief="flat",
+                            highlightbackground=BORD, highlightthickness=1)
+
+        sem_var = tk.StringVar(value=self.studium.semester[0].name)
+        row("Semester", lambda: ttk.Combobox(
+            dlg, textvariable=sem_var,
+            values=[s.name for s in self.studium.semester],
+            state="readonly", font=(FONT, 9)))
+
+        e_name = row("Modulname", mk_entry)
+        e_ects = row("ECTS",      mk_entry); e_ects.insert(0, "5")
+        e_note = row("Note (leer = nicht bestanden)", mk_entry)
+
+        mon_var = tk.StringVar(value="Jan")
+        row("Monat", lambda: ttk.Combobox(
+            dlg, textvariable=mon_var, values=MONATE,
+            state="readonly", font=(FONT, 9)))
+
+        def ok():
+            name = e_name.get().strip()
+            if not name:
+                messagebox.showerror("Fehler", "Bitte Modulname eingeben.", parent=dlg)
+                return
+            try:
+                ects = int(e_ects.get().strip())
+            except ValueError:
+                messagebox.showerror("Fehler", "ECTS muss eine Zahl sein.", parent=dlg)
+                return
+            note_str = e_note.get().strip()
+            pruefung = None
+            if note_str:
+                try:
+                    pruefung = Pruefungsleistung(int(note_str))
+                except ValueError:
+                    messagebox.showerror("Fehler", "Note muss eine Zahl sein.", parent=dlg)
+                    return
+            modul = Modul(name, ects, False, pruefung, mon_var.get())
+            for sem in self.studium.semester:
+                if sem.name == sem_var.get():
+                    sem.module.append(modul)
+                    break
+            dlg.destroy()
+            self.anzeigen()
+
+        tk.Button(dlg, text="SPEICHERN", command=ok,
+                  bg=RED, fg=WHITE, font=(FONT, 10, "bold"),
+                  relief="flat", pady=8).pack(fill="x", padx=16, pady=16)
+
+
     # ── Speichern ───────────────────────────
     def _speichern(self):
-        save_data(self.studium)
+        speichern.Speichern().save_data(self.studium)
         messagebox.showinfo("Gespeichert", "Daten wurden erfolgreich gespeichert.")
 
 
@@ -352,7 +425,7 @@ def main():
                     fieldbackground=CARD, background=CARD,
                     foreground=WHITE, selectbackground=BORD,
                     selectforeground=WHITE)
-    studium = speichern.load_data()
+    studium = speichern.Speichern().load_data()
     Dashboard(root, studium)
     root.mainloop()
 

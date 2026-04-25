@@ -1,0 +1,51 @@
+{
+  "name": "Cyber Security B.Sc.",
+  "moegliche_ects": 180,
+  "startdatum": "2025-10-01",
+  "enddatum": "2028-09-30",
+  "semester": [
+    {
+      "name": "Semester 1",
+      "dauer_tage": 180,
+      "module": [
+        {
+          "name": "Einführung in die Programmierung mit Python",
+          "ects_kurs": 5,
+          "bestanden": false,
+          "note": 2,
+          "monat": "Mär"
+        }
+      ]
+    },
+    {
+      "name": "Semester 2",
+      "dauer_tage": 180,
+      "module": [
+      ]
+    },
+    {
+      "name": "Semester 3",
+      "dauer_tage": 180,
+      "module": [
+      ]
+    },
+    {
+      "name": "Semester 4",
+      "dauer_tage": 180,
+      "module": [
+      ]
+    },
+    {
+      "name": "Semester 5",
+      "dauer_tage": 180,
+      "module": [
+      ]
+    },
+    {
+      "name": "Semester 6",
+      "dauer_tage": 180,
+      "module": [
+      ]
+    }
+  ]
+}
