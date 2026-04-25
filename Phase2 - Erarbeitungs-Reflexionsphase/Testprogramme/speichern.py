@@ -1,79 +1,73 @@
+import os
 import json
-from datetime import date
 
+from datetime import date
 from modul import Modul
 from pruefungsleistung import Pruefungsleistung
 from semester import Semester
 from studium import Studium
 
+DATA_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "studium_data.json")
 
 class Speichern:
-    def __init__(self, dateipfad: str):
-        self.__dateipfad = dateipfad
 
-    def speichern(self, studium) -> None:
-        daten = self.__zu_json(studium)
-        with open(self.__dateipfad, 'w', encoding='utf-8') as f:
-            json.dump(daten, f, ensure_ascii=False, indent=2)
-
-    def laden(self):
-        with open(self.__dateipfad, 'r', encoding='utf-8') as f:
-            daten = json.load(f)
-        return self.__von_json(daten)
-
-    def __zu_json(self, studium) -> dict:
-        return {
-            "bezeichnung": studium._Studium__bezeichnung,
-            "startjahr": studium._Studium__startjahr,
-            "abschlusstitel": studium._Studium__abschlusstitel,
-            "semester": [
-                {
-                    "nummer": s._Semester__nummer,
-                    "bezeichnung": s._Semester__bezeichnung,
-                    "module": [
-                        {
-                            "name": k._Kurs__name,
-                            "modul_id": k._Kurs__kurs_id,
-                            "credits": k._Kurs__credits,
-                            "pruefungsleistungen": [
-                                {
-                                    "titel": pl._Pruefungsleistung__titel,
-                                    "typ": pl._Pruefungsleistung__typ,
-                                    "datum": str(pl._Pruefungsleistung__datum),
-                                    "note": pl._Pruefungsleistung__note,
-                                    "gewichtung": pl._Pruefungsleistung__gewichtung
-                                }
-                                for pl in k.get_pruefungsleistungen()
-                            ]
-                        }
-                        for k in s.get_kurse()
+    def load_data(self) -> Studium:
+        if os.path.exists(DATA_FILE):
+            try:
+                with open(DATA_FILE, encoding="utf-8") as f:
+                    d = json.load(f)
+                semester_list = []
+                for sem in d.get("semester", []):
+                    module = [
+                        Modul(m["name"], m["ects_kurs"], m.get("bestanden", False),
+                              Pruefungsleistung(m["note"]) if m.get("note") is not None else None,
+                              m.get("monat", "Jan"))
+                        for m in sem.get("module", [])
                     ]
-                }
-                for s in studium.get_semester()
+                    semester_list.append(Semester(sem["name"], sem["dauer_tage"], module))
+                return Studium(d["name"], d["moegliche_ects"],
+                               date.fromisoformat(d["startdatum"]),
+                               date.fromisoformat(d["enddatum"]),
+                               semester_list)
+            except Exception as e:
+                print(f"Ladefehler: {e}")
+
+        # Demo-Daten
+        module_s1 = [
+            Modul("Mathematik I", 8, pruefung=Pruefungsleistung(2), monat="Jan"),
+            Modul("Programmierung", 6, pruefung=Pruefungsleistung(1), monat="Feb"),
+            Modul("BWL Grundlagen", 5, pruefung=Pruefungsleistung(3), monat="Feb"),
+        ]
+        module_s2 = [
+            Modul("Mathematik II", 8, pruefung=Pruefungsleistung(3), monat="Mär"),
+            Modul("Datenbanken", 6, pruefung=Pruefungsleistung(2), monat="Apr"),
+            Modul("Statistik", 5, pruefung=Pruefungsleistung(4), monat="Apr"),
+            Modul("Algorithmen", 6, bestanden=False, monat="Mai"),
+        ]
+        module_s3 = [
+            Modul("Softwareentwicklung", 7, bestanden=False, monat="Mai"),
+            Modul("Netzwerke", 5, bestanden=False, monat="Jun"),
+        ]
+        return Studium("Informatik B.Sc.", 180,
+                       date(2023, 10, 1), date(2026, 9, 30),
+                       [Semester("Semester 1", 180, module_s1),
+                        Semester("Semester 2", 180, module_s2),
+                        Semester("Semester 3", 180, module_s3)])
+
+    def save_data(studium: Studium):
+        d = {
+            "name": studium.name,
+            "moegliche_ects": studium.moegliche_ects,
+            "startdatum": studium.startdatum.isoformat(),
+            "enddatum": studium.enddatum.isoformat(),
+            "semester": [
+                {"name": s.name, "dauer_tage": s.dauer.days,
+                 "module": [{"name": m.name, "ects_kurs": m.ects_kurs,
+                             "bestanden": m.bestanden,
+                             "note": m.pruefung.note if m.pruefung else None,
+                             "monat": m.monat} for m in s.module]}
+                for s in studium.semester
             ]
         }
-
-    def __von_json(self, daten: dict):
-        from datetime import date
-        studium = Studium(
-            daten["bezeichnung"],
-            daten["startjahr"],
-            daten["abschlusstitel"]
-        )
-        for s_daten in daten["semester"]:
-            semester = Semester(s_daten["nummer"], s_daten["bezeichnung"])
-            for k_daten in s_daten["Module"]:
-                modul = Modul(k_daten["name"], k_daten["modul_id"], k_daten["credits"])
-                for pl_daten in k_daten["pruefungsleistungen"]:
-                    datum = date.fromisoformat(pl_daten["datum"])
-                    pl = Pruefungsleistung(
-                        pl_daten["titel"],
-                        pl_daten["typ"],
-                        datum,
-                        pl_daten["note"],
-                        pl_daten["gewichtung"]
-                    )
-                    modul.add_pruefungsleistung(pl)
-                semester.add_modul(modul)
-            studium.add_semester(semester)
-        return studium
+        with open(DATA_FILE, "w", encoding="utf-8") as f:
+            json.dump(d, f, indent=2, ensure_ascii=False)

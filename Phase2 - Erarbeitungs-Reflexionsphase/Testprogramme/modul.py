@@ -1,18 +1,13 @@
-import pruefungsleistung
-from pruefungsleistung import Pruefungsleistung
-
-
 class Modul:
-    def __init__(self, name: str, ects: int):
+    def __init__(self, name: str, ects_kurs: int, bestanden: bool = False,
+                 pruefung=None, monat: str = "Jan"):
         self.name = name
-        self.ects = ects
-        self.pruefungsleistung = []
+        self.bestanden = bestanden
+        self.ects_kurs = ects_kurs
+        self.pruefung = pruefung
+        self.monat = monat
 
-    def add_pruefungsleistung(self, pl: Pruefungsleistung):
-        self.pruefungsleistung.append(pl)
-
-    def get_pruefungsleistung(self):
-        return self.pruefungsleistung
-
-    def bestanden(self):
-        return all(pl.bestanden() for pl in self.pruefungsleistung)
+    def abgabe_bestanden(self) -> bool:
+        if self.pruefung:
+            return self.pruefung.ist_bestanden()
+        return self.bestanden

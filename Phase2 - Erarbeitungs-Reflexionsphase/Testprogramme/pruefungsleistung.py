@@ -1,33 +1,14 @@
-from datetime import date, datetime
-
-
 class Pruefungsleistung:
-    def __init__(self, titel: str, datum: date, note: float, ects: int):
-        self.titel = titel
-        self.datum = datum
+    def __init__(self, note: int):
         self.note = note
-        self.ects = ects
 
-    # getter
-    def get_titel(self) -> str:
-        return self.titel
+    def ist_bestanden(self) -> bool:
+        return self.note <= 4
 
-    def get_datum(self) -> date:
-        return self.datum
+# Getter und Setter
 
-    def get_note(self) -> str:
+    def get_note(self) -> int:
         return self.note
 
-    def get_ects(self) -> int:
-        return self.ects
-
-    # Methoden
-    def bestanden(self) -> bool:
-        if self.note <= 4.0 and self.note >= 1.0:
-            return True
-        else:
-            return False
-
-
-def bestanden():
-    return None
+    def set_note(self, note: int):
+        self.note = note
