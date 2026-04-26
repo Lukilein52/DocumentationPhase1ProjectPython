@@ -1,5 +1,7 @@
 import tkinter as tk
+from datetime import date
 from tkinter import ttk, messagebox
+from tkcalendar import DateEntry
 import speichern
 from constants import *
 import matplotlib
@@ -21,6 +23,7 @@ class Dashboard:
         self.root.configure(bg=BG)
         self.root.geometry("1920x1080")
         self.root.minsize(900, 580)
+        self.root.state("zoomed")
         self._build_ui()
         self.anzeigen()
 
@@ -46,7 +49,7 @@ class Dashboard:
         for txt, cmd, color in [
             ("💾 SPEICHERN", self._speichern, BLUE),
             ("＋ HINZUFÜGEN", self._dialog_modul, RED),
-            ("⚙️ STUDIUM BEARBEITEN",self._daten_bearbeiten, GREEN)
+            ("⚙️ STUDIUM BEARBEITEN",self._daten_bearbeiten, ORANGE)
         ]:
             tk.Button(hdr, text=txt, command=cmd,
                       bg=CARD, fg=color, relief="flat",
@@ -343,66 +346,83 @@ class Dashboard:
     # ── Daten bearbeiten ───────────────────────────
 
     def _daten_bearbeiten(self):
-        if not self.studium.semester:
-            messagebox.showwarning("Warnung", "Kein Semester vorhanden.")
-            return
-
         dlg = tk.Toplevel(self.root)
         dlg.title("Studium bearbeiten")
         dlg.configure(bg=BG)
         dlg.resizable(False, False)
         dlg.grab_set()
 
-        def row(label, widget_fn):
-            tk.Label(dlg, text=label, fg=MUTED, bg=BG,
-                     font=(FONT, 8), anchor="w").pack(fill="x", padx=16, pady=(8, 0))
-            w = widget_fn()
-            w.pack(fill="x", padx=16)
-            return w
+        def mk_entry(prefill: str) -> tk.Entry:
+            e = tk.Entry(dlg, bg=CARD, fg=WHITE, insertbackground=WHITE, font=(FONT, 10), relief="flat", highlightbackground=BORD, highlightthickness=1)
+            e.insert(0, prefill)
+            e.pack(fill="x", padx=16)
+            return e
 
-        def mk_entry():
-            return tk.Entry(dlg, bg=CARD, fg=WHITE, insertbackground=WHITE,
-                            font=(FONT, 10), relief="flat",
-                            highlightbackground=BORD, highlightthickness=1)
+        def lbl(text: str):
+            tk.Label(dlg, text=text, fg=MUTED, bg=BG, font=(FONT, 8), anchor="w").pack(fill="x", padx=16, pady=(8, 0))
 
-        sem_var = tk.StringVar(value=self.studium.semester[0].name)
-        row("Semester", lambda: ttk.Combobox(
-            dlg, textvariable=sem_var,
-            values=[s.name for s in self.studium.semester],
-            state="readonly", font=(FONT, 9)))
+        def mk_calendar(prefill: date) -> DateEntry:
+            cal = DateEntry(
+                dlg,
+                year=prefill.year,
+                month=prefill.month,
+                day=prefill.day,
+                date_pattern="yyyy-mm-dd",
+                background=RED,
+                foreground=WHITE,
+                bordercolor=BORD,
+                headersbackground=CARD,
+                headersforeground=WHITE,
+                selectbackground=RED,
+                selectforeground=WHITE,
+                normalbackground=CARD,
+                normalforeground=WHITE,
+                weekendbackground=CARD,
+                weekendforeground=MUTED,
+                othermonthbackground=BG,
+                otermonthforeground=MUTED,
+                font=(FONT, 9),
+                relief="flat",
+            )
+            cal.pack(fill="x", padx=16)
+            return cal
 
-        e_name = row("Modulname", mk_entry)
-        e_ects = row("ECTS",      mk_entry); e_ects.insert(0, "5")
-        e_note = row("Note (leer = nicht bestanden)", mk_entry)
+        lbl("Studiengang Name")
+        e_name: tk.Entry = mk_entry(self.studium.name)
 
-        mon_var = tk.StringVar(value="Jan")
-        row("Monat", lambda: ttk.Combobox(
-            dlg, textvariable=mon_var, values=MONATE,
-            state="readonly", font=(FONT, 9)))
+        lbl("Startdatum")
+        cal_start: DateEntry = mk_calendar(self.studium.startdatum)
+
+        lbl("Enddatum")
+        cal_end: DateEntry = mk_calendar(self.studium.enddatum)
+
+        lbl("Mögliche ECTS")
+        e_ects: tk.Entry = mk_entry(str(self.studium.moegliche_ects))
 
         def ok():
-            name = e_name.get().strip()
+            name: str = e_name.get().strip()
             if not name:
-                messagebox.showerror("Fehler", "Bitte Modulname eingeben.", parent=dlg)
+                messagebox.showerror("Fehler", "Bitte einen Namen eingeben.", parent=dlg)
                 return
+
+            startdatum: date = cal_start.get_date()  # returns a date object directly
+            enddatum: date = cal_end.get_date()
+
+            if enddatum <= startdatum:
+                messagebox.showerror("Fehler", "Enddatum muss nach dem Startdatum liegen.", parent=dlg)
+                return
+
             try:
-                ects = int(e_ects.get().strip())
+                moegliche_ects: int = int(e_ects.get().strip())
             except ValueError:
                 messagebox.showerror("Fehler", "ECTS muss eine Zahl sein.", parent=dlg)
                 return
-            note_str = e_note.get().strip()
-            pruefung = None
-            if note_str:
-                try:
-                    pruefung = Pruefungsleistung(int(note_str))
-                except ValueError:
-                    messagebox.showerror("Fehler", "Note muss eine Zahl sein.", parent=dlg)
-                    return
-            modul = Modul(name, ects, False, pruefung, mon_var.get())
-            for sem in self.studium.semester:
-                if sem.name == sem_var.get():
-                    sem.module.append(modul)
-                    break
+
+            self.studium.name = name
+            self.studium.startdatum = startdatum
+            self.studium.enddatum = enddatum
+            self.studium.moegliche_ects = moegliche_ects
+
             dlg.destroy()
             self.anzeigen()
 

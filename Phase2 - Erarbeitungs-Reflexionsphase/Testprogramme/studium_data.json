@@ -20,32 +20,27 @@
     {
       "name": "Semester 2",
       "dauer_tage": 180,
-      "module": [
-      ]
+      "module": []
     },
     {
       "name": "Semester 3",
       "dauer_tage": 180,
-      "module": [
-      ]
+      "module": []
     },
     {
       "name": "Semester 4",
       "dauer_tage": 180,
-      "module": [
-      ]
+      "module": []
     },
     {
       "name": "Semester 5",
       "dauer_tage": 180,
-      "module": [
-      ]
+      "module": []
     },
     {
       "name": "Semester 6",
       "dauer_tage": 180,
-      "module": [
-      ]
+      "module": []
     }
   ]
 }

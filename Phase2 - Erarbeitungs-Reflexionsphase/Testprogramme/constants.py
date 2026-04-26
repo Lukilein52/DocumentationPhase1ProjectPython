@@ -8,6 +8,7 @@ BLUE  = "#4361ee"
 WHITE = "#f0f0f0"
 MUTED = "#666666"
 GREEN = "#2dc653"
+ORANGE = "#e74c3c"
 FONT  = "Courier New"
 
 def style_ax(ax, fig_color=None):
