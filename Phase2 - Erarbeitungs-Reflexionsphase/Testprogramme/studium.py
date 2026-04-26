@@ -1,8 +1,9 @@
 from datetime import date, timedelta
 
 class Studium:
-    def __init__(self, name: str, moegliche_ects: int,
+    def __init__(self, studierender:str, name: str, moegliche_ects: int,
                  startdatum: date, enddatum: date, semester=None):
+        self.studierender = studierender
         self.name = name
         self.moegliche_ects = moegliche_ects
         self.startdatum = startdatum

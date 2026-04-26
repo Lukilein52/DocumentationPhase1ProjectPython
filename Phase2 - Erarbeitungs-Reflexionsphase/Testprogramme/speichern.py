@@ -25,7 +25,7 @@ class Speichern:
                         for m in sem.get("module", [])
                     ]
                     semester_list.append(Semester(sem["name"], sem["dauer_tage"], module))
-                return Studium(d["name"], d["moegliche_ects"],
+                return Studium(d["studierender"], d["name"], d["moegliche_ects"],
                                date.fromisoformat(d["startdatum"]),
                                date.fromisoformat(d["enddatum"]),
                                semester_list)
@@ -34,6 +34,7 @@ class Speichern:
 
     def save_data(self, studium: Studium):
         d = {
+            "studierender": studium.studierender,
             "name": studium.name,
             "moegliche_ects": studium.moegliche_ects,
             "startdatum": studium.startdatum.isoformat(),

@@ -81,7 +81,7 @@ class Dashboard:
     def anzeigen(self):
         s = self.studium
         self.lbl_title.config(
-            text=f"Hallo Lukas, Du studierst {s.name} seit {s.tage_studiert()} Tagen!")
+            text=f"Hallo {s.studierender}, Du studierst {s.name} seit {s.tage_studiert()} Tagen!")
         self.plot_donut()
         self.plot_ects_monat()
         self.plot_fortschritt()
@@ -387,6 +387,9 @@ class Dashboard:
             cal.pack(fill="x", padx=16)
             return cal
 
+        lbl("Name")
+        e_studierender: tk.Entry = mk_entry(self.studium.studierender)
+
         lbl("Studiengang Name")
         e_name: tk.Entry = mk_entry(self.studium.name)
 
@@ -400,6 +403,7 @@ class Dashboard:
         e_ects: tk.Entry = mk_entry(str(self.studium.moegliche_ects))
 
         def ok():
+            studierender = e_studierender.get().strip()
             name: str = e_name.get().strip()
             if not name:
                 messagebox.showerror("Fehler", "Bitte einen Namen eingeben.", parent=dlg)
@@ -417,7 +421,7 @@ class Dashboard:
             except ValueError:
                 messagebox.showerror("Fehler", "ECTS muss eine Zahl sein.", parent=dlg)
                 return
-
+            self.studium.studierender = studierender
             self.studium.name = name
             self.studium.startdatum = startdatum
             self.studium.enddatum = enddatum
