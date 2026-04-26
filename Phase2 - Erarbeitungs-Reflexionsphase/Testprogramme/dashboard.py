@@ -1,4 +1,5 @@
 import tkinter as tk
+import ctypes
 from datetime import date
 from tkinter import ttk, messagebox
 from tkcalendar import DateEntry
@@ -442,7 +443,9 @@ class Dashboard:
 
 
 def main():
+    ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID("lukas.studium.dashboard")
     root = tk.Tk()
+    root.iconbitmap("icon.ico")
     style = ttk.Style()
     style.theme_use("clam")
     style.configure("TCombobox",
